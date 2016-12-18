@@ -146,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Also pause the glSurface
      */
-
     @Override
     protected void onPause() {
         super.onPause();
