@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public byte[] getFromRaw() {
         try {
             InputStream in = getResources().openRawResource(R.raw.video); // 从Resources中raw中的文件获取输入流
