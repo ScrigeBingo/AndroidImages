@@ -26,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // requesting to turn the title OFF
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        // making it full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -36,16 +35,11 @@ public class MainActivity extends AppCompatActivity {
             GLES20Support.getNoSupportGLES20Dialog(this);
         }
 
-        // Initiate the Open GL view and
-        // create an instance with this activity
         glSurfaceView = new GLFrameSurface(this);
         glSurfaceView.setEGLContextClientVersion(2);
-        //
+
         glRenderer = new GLFrameRenderer(null, glSurfaceView, getDM(this));
-        // set our renderer to be the main renderer with
-        // the current activity context
         glSurfaceView.setRenderer(glRenderer);
-        //
         setContentView(glSurfaceView);
 
         mHandler.postDelayed(new Runnable() {

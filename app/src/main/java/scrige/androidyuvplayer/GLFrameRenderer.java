@@ -30,16 +30,13 @@ public class GLFrameRenderer implements Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        Utils.LOGD("GLFrameRenderer :: onSurfaceCreated");
         if (!prog.isProgramBuilt()) {
             prog.buildProgram();
-            Utils.LOGD("GLFrameRenderer :: buildProgram done");
         }
     }
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        Utils.LOGD("GLFrameRenderer :: onSurfaceChanged");
         GLES20.glViewport(0, 0, width, height);
     }
 
@@ -64,7 +61,6 @@ public class GLFrameRenderer implements Renderer {
      * the video size changes.
      */
     public void update(int w, int h) {
-        Utils.LOGD("INIT E");
         if (w > 0 && h > 0) {
             // 调整比例
             if (mScreenWidth > 0 && mScreenHeight > 0) {
@@ -99,7 +95,6 @@ public class GLFrameRenderer implements Renderer {
         if (mParentAct != null) {
         	mParentAct.onPlayStart();
         }
-        Utils.LOGD("INIT X");
     }
 
     /**
@@ -119,14 +114,5 @@ public class GLFrameRenderer implements Renderer {
         mTargetSurface.requestRender();
     }
 
-    /**
-     * this method will be called from native code, it's used for passing play state to activity.
-     */
-    public void updateState(int state) {
-        Utils.LOGD("updateState E = " + state);
-        if (mParentAct != null) {
-            mParentAct.onReceiveState(state);
-        }
-        Utils.LOGD("updateState X");
-    }
+
 }

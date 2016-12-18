@@ -13,7 +13,6 @@ public class GLES20Support {
     public static boolean detectOpenGLES20(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         ConfigurationInfo info = am.getDeviceConfigurationInfo();
-        Utils.LOGE("info.reqGlEsVersion = " + info.reqGlEsVersion);
         return (info.reqGlEsVersion >= 0x20000);
     }
 
