@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 public class MainActivity extends AppCompatActivity {
-    /** The OpenGL view */
+
     private GLSurfaceView glSurfaceView;
 
     private GLFrameRenderer glRenderer;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                // TODO Auto-generated method stub
+
                 glRenderer.update(176, 144);
 
                 byte[] yuv = getFromRaw();
