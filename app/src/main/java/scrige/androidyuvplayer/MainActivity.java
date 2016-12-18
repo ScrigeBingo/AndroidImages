@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             GLES20Support.getNoSupportGLES20Dialog(this);
         }
 
+
         // Initiate the Open GL view and
         // create an instance with this activity
         glSurfaceView = new GLFrameSurface(this);
